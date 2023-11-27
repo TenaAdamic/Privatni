@@ -11,32 +11,30 @@ async function dobiPodatke(){
 
         loadanje.style.display = 'block';
 
-        const response = await fetch('https://itunes.apple.com/search?term=indie&entity=song-db.json', {method: 'GET'});
+
+        const response = await fetch('https://itunes.apple.com/search?term=indie&entity=song');
 
         const responseData = await response.json(); 
-        console.log(responseData);
-
-        
 
         while(listaIzlistaj.firstChild){
             listaIzlistaj.removeChild(listaIzlistaj.firstChild);
         }
 
-        
-
-        const output = inputNesto.value;
-
-        const dobiveno = {
-            poruka: output
-        };
+    
 
         for(key in responseData){
+            console.log(responseData[key]);
             let elementListe = document.createElement('li');
             listaIzlistaj.appendChild(elementListe);
-            elementListe.innerHTML = responseData[key].poruka;
+            console.log(responseData);
+            elementListe.innerHTML = responseData[key].results;
         }
 
+        
+
         loadanje.style.display = 'none';
+
+        
 
     } catch(error){
         alert(error);
@@ -45,5 +43,5 @@ async function dobiPodatke(){
 
 }
 
-inputNesto.addEventListener('input', dobiPodatke);
+inputNesto.addEventListener('keyup', dobiPodatke);
 
