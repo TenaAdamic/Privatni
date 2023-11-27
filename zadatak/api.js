@@ -20,21 +20,19 @@ async function dobiPodatke(){
             listaIzlistaj.removeChild(listaIzlistaj.firstChild);
         }
 
-    
+        // filter the artist names in the results that match the input
+        const filteredData = responseData.results.filter((item) => {
+          // return item.artistName === inputNesto.value; // this works but requires exact match
+          return item.artistName.includes(inputNesto.value); // this is better
+        })
 
-        for(key in responseData){
-            console.log(responseData[key]);
-            let elementListe = document.createElement('li');
-            listaIzlistaj.appendChild(elementListe);
-            console.log(responseData);
-            elementListe.innerHTML = responseData[key].results;
+        for ( let i = 0; i < filteredData.length; i++ ){
+          let elementListe = document.createElement('li');
+          listaIzlistaj.appendChild(elementListe);
+          elementListe.innerHTML = `<b>Artist</b>: ${filteredData[i].artistName}, <b>TrackName</b>: ${filteredData[i].trackName}`;
         }
 
-        
-
         loadanje.style.display = 'none';
-
-        
 
     } catch(error){
         alert(error);
