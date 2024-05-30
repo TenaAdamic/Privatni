@@ -1,0 +1,266 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+a {
+  text-decoration: none;
+ }
+
+
+ li {
+  list-style: none;
+ }
+
+
+.show-menu {
+    opacity: 1;
+    /* transform: translateY(0);
+    transition: opacity 200ms ease-out, transform 200ms ease-out; */
+  }
+
+  .hide-menu {
+
+    opacity: 0;
+    /* transform: translateY(-1rem);
+    transition: opacity 150ms ease-in, transform 150ms ease-in; */
+  }
+
+  .cta-button {
+    background-image: linear-gradient(to right, #4776E6 0%, #8E54E9  51%, #4776E6  100%);
+    /* box-shadow: 0 0 5px #eee; */
+    border-radius: 8px;
+    padding: 10px 20px;
+    border: none;
+    font-family: "Lato", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    font-size: 15px;
+    color: #eee;
+    margin-right: 3.5vw;
+   
+}
+
+.cta-button:hover {
+    background-color: #4776E6;
+    background-position: right;
+    color:aqua;
+    cursor: pointer;
+ 
+ }
+
+ .calendar {
+  margin-top: 50px;
+ }
+
+ .language-img {
+  width: 30px;
+  display: block;
+  border-radius: 5px;
+  box-shadow: 0 0 0 rgb(211, 186, 234);
+  
+ }
+
+ .drop-down-body {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 15px;
+  padding-bottom: 2px;
+  /* margin: 15px; */
+ }
+
+ .drop-down-btn {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  border-radius: 5px;
+  color: #fff;
+  border: 1px solid #cfcfcf;
+  cursor: pointer;
+  
+ }
+
+ .drop-down-btn:hover {
+  background-color: #4776E6;
+ }
+
+ .language-menu {
+  position: absolute; /* Position absolutely to overlay other elements */
+  top: 100%; /* Position it just below the button */
+  right: 15px; /* Align with the left edge of the parent */
+  background-color: #002244;
+  color: #fff;
+  border-radius: 5px;
+  border: 1px solid #8E54E9;
+  padding: 1px;
+  opacity: 0;
+  visibility: hidden;
+  display: none;
+  transition: opacity 0.4s, visibility 0.4s;
+  /* margin-top: 2px; */
+  cursor: pointer;
+  z-index: 60;
+ }
+
+ .drop-down-btn:hover + .language-menu,
+ .language-menu:hover
+ {
+  opacity: 1;
+  visibility: visible;
+  display: block;
+  cursor: pointer;
+  transition: opacity 0.4s, visibility 0.4s;
+  z-index: 60;
+ }
+
+
+ .language-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 5px;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: background-color 0.4s;
+  z-index: 50;
+ }
+
+ .language-title {
+  padding-left: 10px;
+  width: 30px;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 15px;
+ }
+
+
+ .language-item:hover {
+  background-color: #4776E6;
+ }
+
+ #off-screen-menu {
+  height: 50vh;
+  width: 100%;
+  max-width: 450px;
+  position: fixed;
+  top: 0;
+  right: -450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 3rem;
+  transition: .3s ease;
+  
+ }
+
+ #off-screen-menu.active {
+  
+  right: 0;
+ }
+
+ #off-screen-menu.inactive {
+  right: -450px;
+ }
+
+ #hamburger-menu {
+  height: 30px;
+  width: 30px;
+  margin-left: auto;
+  position: relative;
+ }
+
+
+
+ #hamburger-menu span {
+  height: 2px;
+  width: 90%;
+  background-color: gray;
+  border-radius: 25px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: .3s ease;
+ }
+
+ #hamburger-menu span:nth-child(1){
+  top: 30%;
+ }
+
+ #hamburger-menu span:nth-child(2){
+  top: 70%;
+ }
+
+ #hamburger-menu span:nth-child(4){
+  top: 90%;
+ }
+
+ /* #hamburger-menu.active span:nth-child(1){
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+ }
+
+ #hamburger-menu.active span:nth-child(2){
+  opacity:0;
+ }
+
+ #hamburger-menu.active span:nth-child(3){
+  opacity:0;
+ }
+
+ #hamburger-menu.active span:nth-child(4){
+  top: 50%;
+  transform: translate(-50%, 50%) rotate(-45deg);
+ } */
+
+ #hamburger-menu.active {
+  display: none;
+ }
+
+ #hamburger-menu.inactive {
+  display: block;
+  cursor: pointer;
+ }
+
+ /* #close-offscreen-menu {
+  display: none;
+  cursor: pointer;
+ }
+
+ #close-offscreen-menu.active {
+  display: block;
+  cursor: pointer;
+ }
+
+
+ #close-offscreen-menu.inactive {
+  display: none;
+  cursor: pointer; */
+ /* } */
+
+ #close {
+  color: #686868;
+  float: right;
+  font-size: 28px;
+  font-weight: normal;
+  display: none;
+}
+
+#close.active {
+  display: block;
+}
+
+#close.inactive {
+  display: none;
+}
+
+#xbutton #close.active:hover,
+#xbutton #close.active:focus {
+    color: red;
+    text-decoration: none;
+    cursor: pointer;
+}
