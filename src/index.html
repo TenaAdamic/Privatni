@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="./output.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <title>SkyCape SEO Agency in Zagreb</title>
 
 </head>
@@ -114,46 +115,110 @@
               <div class="flex items-center justify-between">
                 <a href="#" class="-m-1.5 p-1.5">
                   <span class="sr-only">SkyScape SEO</span>
-                  <img class="h-32 w-auto" src="../Images/SkyScape_SEO.png" alt="Agencija za SEO u Hrvatskoj">
+                  <img class="h-32 w-auto md:hidden" src="../Images/SkyScape_SEO.png" alt="Agencija za SEO u Hrvatskoj">
                 </a>
                 <!-- Hamburger button -->
                 
                 <!-- <button id="hamburger-button" class="cursor-pointer relative"> -->
 
-                  <!-- onaj neki span div s crticama -->
+                
                   <div id="hamburger-menu">
                     <span></span>
                     <span></span>
                     <span></span>
-                    <span></span>
+                   
                   </div>
 
                 <!-- </button> -->
                 
                 <!-- Close button X -->
 
-                <button id="xbutton">
-                  <span id="close">&times;</span>
-                </button>
+                <!-- <button id="close">
+                  <span>&times;</span>
+                </button> -->
                 
-                <!-- <button id="close-off" type="button" class="-m-2.5 rounded-md p-2.5 text-gray-400">
+                <!-- <button id="close" type="button" class="hidden -m-2.5 rounded-md p-2.5 text-gray-400">
                   <span class="sr-only">Close menu</span>
-                  <svg id="close" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                  <svg  class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                   </svg>
                 </button> -->
 
               </div>
-              <div class="mt-6 flow-root">
-                <div class="-my-6 divide-y divide-gray-500/25">
-                  <div class="space-y-2 py-6">
+              <div class="mt-10 flow-root">
+              <div class="-my-6 divide-y divide-gray-500/25">
+                <div class="space-y-2 py-6">
                   <!-- off-screen-menu -->
                   <div id="off-screen-menu">
-                    <a href="./about.html" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 bg-gray-900 text-white hover:bg-gray-800">About</a>
 
-                    <!-- Mobile Organic Search -->
-                  
-                    <div class="relative">
+                    
+                    <div class="my-5">
+                      <h6 class="mb-0">
+                        <a href="./about.html" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 bg-gray-900 text-white hover:bg-gray-800">About</a>
+                      </h6>
+                    </div>
+                    
+
+                    <!-- Mobile Organic Search Accordion version -->
+
+
+                    <div class="relative mb-3">
+                      <h6 class="mb-0">
+                        <button id="menu-button3" 
+                          class="relative transition-all ease-in   cursor-pointer "
+                          data-collapse-target="animated-collapse-1"
+                        >
+                          <span class="-mx-3  block rounded-lg px-2 py-2 text-base font-semibold  leading-7 text-white hover:bg-gray-800">Organic Search<i class="absolute pl-3 py-2 text-base transition-transform fa fa-chevron-down text-white group-open:rotate-180"></i></span>
+                          
+                        </button>
+                      </h6>
+                      <div
+                        data-collapse="animated-collapse-1"
+                        class="h-0 overflow-hidden transition-all duration-300 ease-in-out"
+                      >
+                        <div id="flyout-menu3" class="w-56 shrink rounded-xl bg-gray-800 p-4 text-sm font-semibold leading-6 text-white shadow-lg ring-1 ring-gray-900/5">
+                            <a href="./wordpressSEO.html" class="block p-2 hover:text-indigo-600">WordPress SEO</a>
+                            <a href="./technicalSEO.html" class="block p-2 hover:text-indigo-600">Technical SEO</a>
+                            <a href="./seocopywriting.html" class="block p-2 hover:text-indigo-600">SEO Copywriting</a>
+                            <a href="./localSEO.html" class="block p-2 hover:text-indigo-600">Local SEO</a>
+                            <a href="./ecommerceSEO.html" class="block p-2 hover:text-indigo-600">Ecommerce SEO</a>
+                            <a href="./seoaudits.html" class="block p-2 hover:text-indigo-600">SEO Auditing</a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Mobile Paid Search Accordion version -->
+
+                    <div class="relative mb-3">
+                      <h6 class="mb-0">
+                        <button id="menu-button4" 
+                          class="relative transition-all ease-in   cursor-pointer "
+                          data-collapse-target="animated-collapse-2"
+                        >
+                          <span class="-mx-3  block rounded-lg px-2 py-2 text-base font-semibold  leading-7 text-white hover:bg-gray-800">Paid Search<i class="absolute pl-3 py-2 text-base transition-transform  fa-solid fa-chevron-down  text-white group-open:rotate-180"></i></span>
+                          
+                        </button>
+                      </h6>
+                      <div
+                        data-collapse="animated-collapse-2"
+                        class="h-0 overflow-hidden transition-all duration-300 ease-in-out"
+                      >
+                        <div id="flyout-menu4" class="w-56 shrink rounded-xl bg-gray-800 p-4 text-sm font-semibold leading-6 text-white shadow-lg ring-1 ring-gray-900/5">
+                          <a href="./googleads.html" class="block p-2 hover:text-indigo-600">Google Ads</a>
+                          <a href="./linkedinads.html" class="block p-2 hover:text-indigo-600">LinkedIn Ads</a>
+                          <a href="./facebookads.html" class="block p-2 hover:text-indigo-600">Facebook Ads</a>
+                          <a href="./ecommerceppc.html" class="block p-2 hover:text-indigo-600">Ecommerce PPC</a>
+                          <a href="./ppcconsultancy.html" class="block p-2 hover:text-indigo-600">PPC Consultancy</a>
+                        </div>
+                      </div>
+                    </div>
+
+
+
+
+                    <!-- Originalna verzija -->
+
+                    <!-- <div class="relative">
 
                       <a href="#" id="menu-button3" class=" -mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-800" aria-expanded="false">Organic Search</a>
 
@@ -169,11 +234,11 @@
                         </div>
                       </div>
 
-                    </div>
+                    </div> -->
                         
                         <!-- Mobile Paid Search -->
 
-                    <div class="relative">
+                    <!-- <div class="relative">
 
                       <a href="#" id="menu-button4" class=" -mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-800" aria-expanded="false">Paid Search</a>
 
@@ -188,10 +253,16 @@
                           </div>
                         </div>
 
+                    </div> -->
+
+                    <div class="my-5">
+                      <h6 class="mb-0">
+                        <a href="./contact.html" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7  bg-gray-900 text-white hover:bg-gray-800">Contact</a>
+                      </h6>
                     </div>
 
 
-                    <a href="./contact.html" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7  bg-gray-900 text-white hover:bg-gray-800">Contact</a>
+                    
                   </div>
                   <!-- End off-screen-menu -->
                   <!-- </div> -->
@@ -340,5 +411,11 @@
         </div>
       </footer>
     <script src="script.js"></script>
+    <!-- from node_modules -->
+    <script src="node_modules/@material-tailwind/html/scripts/collapse.js"></script>
+    
+    <!-- from cdn -->
+    <script src="https://unpkg.com/@material-tailwind/html@latest/scripts/collapse.js"></script>
+
 </body>
 </html>

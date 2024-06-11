@@ -80,74 +80,50 @@ const flyoutMenu2 = document.getElementById('flyout-menu2');
   const menuButton4 = document.getElementById('menu-button4');
   const flyoutMenu4 = document.getElementById('flyout-menu4');
 
-  
-    menuButton3.addEventListener('click', () => {
-      const isExpanded = JSON.parse(menuButton3.getAttribute('aria-expanded'));
-      menuButton3.setAttribute('aria-expanded', !isExpanded);
-  
-      if (isExpanded) {
-        flyoutMenu3.classList.add('hide-menu');
-        flyoutMenu3.classList.remove('show-menu');
+    menuButton3.addEventListener('click', function() {
+      const target = document.querySelector('[data-collapse="animated-collapse-1"]');
+      
+      if (target.classList.contains('h-0')) {
+        target.classList.remove('h-0');
+        target.style.height = target.scrollHeight + 'px';
       } else {
-        flyoutMenu3.classList.remove('hide-menu');
-        flyoutMenu3.classList.add('show-menu');
-        // flyoutMenu4.classList.add('hide-menu');
+        target.style.height = '0';
+    
+        // Add the event listener for 'transitionend' without the 'once' option
+        target.addEventListener('transitionend', function onTransitionEnd() {
+          target.classList.add('h-0');
+          target.removeEventListener('transitionend', onTransitionEnd);
+        });
       }
-    });
-  
-    menuButton3.addEventListener('mouseout', () => {
-      flyoutMenu3.classList.add('hide-menu');
-      flyoutMenu3.classList.remove('show-menu');
-    });
-  
-    flyoutMenu3.addEventListener('mouseover', () => {
-      flyoutMenu3.classList.add('show-menu');
-      flyoutMenu3.classList.remove('hide-menu');
-      flyoutMenu4.classList.add('hide-menu');
-      flyoutMenu4.classList.remove('show-menu');
-    });
-  
-    flyoutMenu3.addEventListener('mouseleave', () => {
-      flyoutMenu3.classList.add('hide-menu');
-      flyoutMenu3.classList.remove('show-menu');
+    
+      const icon = this.querySelector('i');
+      icon.classList.toggle('rotate-180');
     });
 
-    // Paid search Mobile
 
+    // Paid search mobile
 
- 
-  
-  
-    menuButton4.addEventListener('click', () => {
-      const isExpanded = JSON.parse(menuButton4.getAttribute('aria-expanded'));
-      menuButton4.setAttribute('aria-expanded', !isExpanded);
-  
-      if (isExpanded) {
-        flyoutMenu4.classList.add('hide-menu');
-        flyoutMenu4.classList.remove('show-menu');
+    menuButton4.addEventListener('click', function() {
+      const target = document.querySelector('[data-collapse="animated-collapse-2"]');
+      
+      if (target.classList.contains('h-0')) {
+        target.classList.remove('h-0');
+        target.style.height = target.scrollHeight + 'px';
       } else {
-        flyoutMenu4.classList.remove('hide-menu');
-        flyoutMenu4.classList.add('show-menu');
-        // flyoutMenu3.classList.add('hide-menu');
+        target.style.height = '0';
+    
+        
+        target.addEventListener('transitionend', function onTransitionEnd() {
+          target.classList.add('h-0');
+          target.removeEventListener('transitionend', onTransitionEnd);
+        });
       }
+    
+      const icon = this.querySelector('i');
+      icon.classList.toggle('rotate-180');
     });
   
-    menuButton4.addEventListener('mouseout', () => {
-      flyoutMenu4.classList.add('hide-menu');
-      flyoutMenu4.classList.remove('show-menu');
-    });
-  
-    flyoutMenu4.addEventListener('mouseover', () => {
-      flyoutMenu4.classList.add('show-menu');
-      flyoutMenu4.classList.remove('hide-menu');
-      flyoutMenu3.classList.add('hide-menu');
-      flyoutMenu3.classList.remove('show-menu');
-    });
-  
-    flyoutMenu4.addEventListener('mouseout', () => {
-      flyoutMenu4.classList.add('hide-menu');
-      flyoutMenu4.classList.remove('show-menu');
-    });
+    
 
     // Responsive: toggle hamburger-menu & off-screen-menu; 
 
@@ -156,16 +132,28 @@ const flyoutMenu2 = document.getElementById('flyout-menu2');
       const hamburgerMenu = document.getElementById('hamburger-menu');
       const offScreenmenu = document.getElementById('off-screen-menu');
 
-      const closeButton = document.getElementById('close');
 
-          hamburgerMenu.addEventListener('click', () => {
-            hamburgerMenu.classList.toggle('active');
-            offScreenmenu.classList.toggle('active');
-            closeButton.classList.toggle('active');
-            console.log('Hamburger button clicked!');
-          });
+      hamburgerMenu.addEventListener('click', () => {
+        hamburgerMenu.classList.toggle('active');
+        offScreenmenu.classList.toggle('active');
+      })
+
+      // const closeButton = document.getElementById('close');
+
+          //   hamburgerMenu.addEventListener('click', () => {
+          //   hamburgerMenu.classList.toggle('active');
+          //   offScreenmenu.classList.toggle('active');
+          //   closeButton.classList.toggle('active');
+          //   console.log('Hamburger button clicked!');
+          // });
 
           // toggle close button (x);
+
+      
+
+
+
+
 
           // closeButton.addEventListener('click', () => {
           //   closeButton.style.display = 'none';
@@ -188,33 +176,33 @@ const flyoutMenu2 = document.getElementById('flyout-menu2');
           // });
 
 
-          closeButton.addEventListener('click', () => {
-            if (hamburgerMenu.classList.contains('active')) {
-                hamburgerMenu.classList.remove('active');
-                hamburgerMenu.classList.add('inactive');
-            } else {
-                hamburgerMenu.classList.remove('inactive');
-                hamburgerMenu.classList.add('active');
-            }
+        //   closeButton.addEventListener('click', () => {
+        //     if (hamburgerMenu.classList.contains('active')) {
+        //         hamburgerMenu.classList.remove('active');
+        //         hamburgerMenu.classList.add('inactive');
+        //     } else {
+        //         hamburgerMenu.classList.remove('inactive');
+        //         hamburgerMenu.classList.add('active');
+        //     }
         
-            if (offScreenmenu.classList.contains('active')) {
-                offScreenmenu.classList.remove('active');
-                offScreenmenu.classList.add('inactive');
-            } else {
-                offScreenmenu.classList.remove('inactive');
-                offScreenmenu.classList.add('active');
-            }
+        //     if (offScreenmenu.classList.contains('active')) {
+        //         offScreenmenu.classList.remove('active');
+        //         offScreenmenu.classList.add('inactive');
+        //     } else {
+        //         offScreenmenu.classList.remove('inactive');
+        //         offScreenmenu.classList.add('active');
+        //     }
         
-            if (closeButton.classList.contains('active')) {
-                closeButton.classList.remove('active');
-                closeButton.classList.add('inactive');
-            } else {
-                closeButton.classList.remove('inactive');
-                closeButton.classList.add('active');
-            }
+        //     if (closeButton.classList.contains('active')) {
+        //         closeButton.classList.remove('active');
+        //         closeButton.classList.add('inactive');
+        //     } else {
+        //         closeButton.classList.remove('inactive');
+        //         closeButton.classList.add('active');
+        //     }
         
-            console.log('Close button clicked!');
-        });
+        //     console.log('Close button clicked!');
+        // });
 
 
 

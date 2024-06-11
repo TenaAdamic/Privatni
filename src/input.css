@@ -141,7 +141,8 @@ a {
  }
 
  #off-screen-menu {
-  height: 50vh;
+  margin-top: 20px;
+  height: 70vh;
   width: 100%;
   max-width: 450px;
   position: fixed;
@@ -199,32 +200,33 @@ a {
   top: 90%;
  }
 
- /* #hamburger-menu.active span:nth-child(1){
+ 
+
+ #hamburger-menu.active span:nth-child(1) {
   top: 50%;
   transform: translate(-50%, -50%) rotate(45deg);
  }
 
- #hamburger-menu.active span:nth-child(2){
-  opacity:0;
+ #hamburger-menu.active span:nth-child(2) {
+  opacity: 0;
  }
 
- #hamburger-menu.active span:nth-child(3){
-  opacity:0;
- }
-
- #hamburger-menu.active span:nth-child(4){
+ #hamburger-menu.active span:nth-child(3) {
   top: 50%;
-  transform: translate(-50%, 50%) rotate(-45deg);
+  transform: translate(-50%, -50%) rotate(-45deg);
+ }
+
+
+/* #hamburger-menu.active {
+  display: none;
+ 
  } */
 
- #hamburger-menu.active {
-  display: none;
- }
 
- #hamburger-menu.inactive {
+ /* #hamburger-menu.inactive {
   display: block;
   cursor: pointer;
- }
+ } */
 
  /* #close-offscreen-menu {
   display: none;
@@ -242,25 +244,19 @@ a {
   cursor: pointer; */
  /* } */
 
- #close {
+ /* #close {
   color: #686868;
   float: right;
   font-size: 28px;
   font-weight: normal;
   display: none;
-}
+} */
 
-#close.active {
+/* #close.active {
   display: block;
-}
+} */
 
-#close.inactive {
+/* #close.inactive {
   display: none;
-}
+}  */
 
-#xbutton #close.active:hover,
-#xbutton #close.active:focus {
-    color: red;
-    text-decoration: none;
-    cursor: pointer;
-}
